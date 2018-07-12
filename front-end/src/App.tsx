@@ -1,18 +1,20 @@
 import * as React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import './App.css';
 
-import Randing from './containers/Randing';
-
-import './../styles/main.scss';
+import logo from './logo.svg';
 
 class App extends React.Component {
-  render() {
+  public render() {
     return (
-      <Switch>
-        <Route exact path="/" component={Randing} />
-        <Route exact path="/randing" component={Randing} />
-        <Route path="/randing/:name" component={Randing} />
-      </Switch>
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to React</h1>
+        </header>
+        <p className="App-intro">
+          To get started, edit <code>src/App.tsx</code> and save to reload.
+        </p>
+      </div>
     );
   }
 }
