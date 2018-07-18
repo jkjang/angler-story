@@ -1,20 +1,22 @@
 import * as React from 'react';
-import './App.css';
-
-import logo from './logo.svg';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+// import { ConnectedRouter } from 'react-router-redux';
+// import Profile from './components/Profile';
+import CounterContainer from './containers/CounterContainer';
+import TodoListContainer from './containers/TodoListContainer';
 
 class App extends React.Component {
-  public render() {
+  render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </div>
+  <div>
+    <BrowserRouter>
+      <Switch>
+        <Route exact={true} path="/" component={CounterContainer} />
+        <Route path="/home" component={TodoListContainer} />
+        {/* <Route path="*" component={NotFound} /> */}
+      </Switch>
+      </BrowserRouter>
+    </div>
     );
   }
 }
