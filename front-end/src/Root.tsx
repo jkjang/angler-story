@@ -1,22 +1,20 @@
 import * as React from 'react';
-// import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import App from './App';
-import configureStore from './store/configureStore';
+import { I18nextProvider } from 'react-i18next';
+import App from 'App';
+import i18n from './i18n'; 
+import configureStore from 'store/configureStore';
 
 const store = configureStore();
 
 class Root extends React.Component {
   render() {
     return (
-      // <Provider store={store} >
-      //   <App />
-      // </Provider>
       <Provider store={store}>
-      {/* <ConnectedRouter history={history}> */}
-        <App />
-      {/* </ConnectedRouter> */}
-    </Provider>
+        <I18nextProvider i18n={i18n}>
+          <App />
+        </I18nextProvider>
+      </Provider>
       ); 
   }
  }
