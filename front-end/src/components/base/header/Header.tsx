@@ -1,8 +1,12 @@
 import * as React from 'react';
 import i18n from 'i18n';
+// import DropdownMenu from '../etc/DropdownMenu';
 
 interface HeaderProps {
   onOpen(): void;
+  changeLang(): void;
+  title: string;
+  data: DropdownMenuNameSpace.DropdownItem[];
 }
 
 const Header: React.SFC<HeaderProps> = (props, t) => {
@@ -40,9 +44,10 @@ const Header: React.SFC<HeaderProps> = (props, t) => {
           <a className="btn no-outline " href="#" onClick={props.onOpen}>
             {i18n.t('signInBtnName.label')}
           </a>
-          <a className="text" href="#">
+          <a className="text" href="#" onClick={props.changeLang}>
             {i18n.t('selectLangBtnName.label')}
           </a>
+          {/* <DropdownMenu title={props.title} data={props.data} /> */}
           <span className="divide">|</span>
           <a className="btn" href="#">
             {i18n.t('startBtnName.label')}

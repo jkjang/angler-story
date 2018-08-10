@@ -1,16 +1,15 @@
 import * as React from 'react';
 import PageTemplate from 'components/base/template/PageTemplate';
-import HeaderCtl from 'containers/base/header/HeaderCtl';
+import HeaderCtr from 'containers/base/header/HeaderCtr';
 
-export interface LandingProps {
-}
+export interface LandingProps {}
 
 class Landing extends React.Component<LandingProps, any> {
   public render() {
     return (
-      <PageTemplate header={<HeaderCtl/>} children={<div>children</div>} />
+      <PageTemplate header={<HeaderCtr />} children={<div>children</div>} />
     );
   }
 }
 
-export default  Landing;
+export default Landing;
