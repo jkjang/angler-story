@@ -1,0 +1,28 @@
+@import 'utils';
+
+.SignInModal {
+  .modal {
+    width: 30rem;
+    @include material-shadow(4, 0.125);
+    .modal-footer {
+      padding: 1rem;
+      text-align: center;
+      position: relative;
+      .link {
+        color: $default-color;
+        padding: 0.15rem 0.25rem;
+        cursor: pointer;
+      }
+    }
+    .modal-content {
+      background: white;
+      color: $oc-gray-9;
+      .title {
+        font-size: 2rem;
+        color: $default-color;
+        font-weight: 800;
+        padding: 0 0 1rem 0;
+      }
+    }
+  }
+}

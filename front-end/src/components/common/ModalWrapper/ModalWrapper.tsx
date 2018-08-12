@@ -1,32 +1,31 @@
-// @flow
-import React, { Component, type Node } from 'react';
+import * as React from 'react';
 import cx from 'classnames';
-import HideScrollbar from 'components/common/HideScrollbar';
+import HideScrollbar from '../HideScrollbar';
 import './ModalWrapper.scss';
 
-type Props = {
-  children: Node,
-  className: string,
-  open: boolean,
-  onModalClose(): void,
-};
+interface Props {
+  children: any;
+  className: string;
+  open: boolean;
+  onModalClose(): void;
+}
 
-type State = {
-  animate: boolean,
-};
+interface State {
+  animate: boolean;
+}
 
-class ModalWrapper extends Component<Props, State> {
+class ModalWrapper extends React.Component<Props, State> {
   animateId: any = null;
 
   state = {
-    animate: false,
+    animate: false
   };
 
   animate(): void {
     this.setState({ animate: true });
     this.animateId = setTimeout(() => {
       this.setState({
-        animate: false,
+        animate: false
       });
     }, 150);
   }
@@ -58,7 +57,7 @@ class ModalWrapper extends Component<Props, State> {
             <div
               className={cx('modal-content', className, {
                 appear: open,
-                disappear: animate && !open,
+                disappear: animate && !open
               })}
             >
               {children}
